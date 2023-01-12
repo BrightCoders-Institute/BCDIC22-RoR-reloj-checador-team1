@@ -4,7 +4,7 @@ class CreateAttendances < ActiveRecord::Migration[7.0]
       t.date :date
       t.timestamp :timeEntrance
       t.timestamp :timeCheckout
-      t.integer :id_employeeNumber
+      t.belongs_to :employee
 
       t.timestamps
     end

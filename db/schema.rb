@@ -18,9 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_231650) do
     t.date "date"
     t.datetime "timeEntrance", precision: nil
     t.datetime "timeCheckout", precision: nil
-    t.integer "id_employeeNumber"
+    t.bigint "employee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_attendances_on_employee_id"
   end
 
   create_table "employees", force: :cascade do |t|
