@@ -1,10 +1,14 @@
-<h1>MainPages#index</h1>
-<p>Find me in app/views/main_pages/index.html.erb</p>
 
-<h1>Employee</h1>
-
-<%= bootstrap_form_for(@employee) do |f| %>
-  <%= f.email_field :email %>
-  <%= f.password_field :password %>
-  <%= f.submit "Log In" %>
-<% end %>
+<main class="form-signin">
+<div class="container-fluid center">
+    <p class="reloj"> 18:00:00 </p>
+</div>
+  <h3 class="h3 mb-3">Porfavor ingresa tus credenciales.</h3>
+  <%= bootstrap_form_for(@employee) do |f| %>
+  <div class="form-floating">
+    <%= f.email_field :email, class: "form-control", placeholder: "ID de trabajador", type: "email", hide_label: true %>
+    <%= f.password_field :password, class: "form-control", placeholder: "Numero Privado", type: "password", hide_label: true %>
+  <div class="form-floating">
+    <%= f.submit "Check", class: "w-100 btn btn-lg btn-primary" %>
+  <% end %>
+</main>
