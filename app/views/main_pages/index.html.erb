@@ -1,6 +1,7 @@
 <main class="form-signin">
 <div class="container-fluid center">
-    <p class="reloj"> 18:00:00 </p>
+    <p class="reloj"></p>
+    <%= javascript_include_tag 'liveClock' %>
 </div>
   <h3 class="h3 mb-3 text-center">Porfavor ingresa tus credenciales.</h3>
   <%= bootstrap_form_for(@attendance) do |f| %>
