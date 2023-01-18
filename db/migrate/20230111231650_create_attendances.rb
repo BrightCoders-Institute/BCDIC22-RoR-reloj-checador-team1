@@ -3,7 +3,7 @@ class CreateAttendances < ActiveRecord::Migration[7.0]
     create_table :attendances do |t|
       t.string :direction
       t.belongs_to :employee
-
+      t.integer :privateNumber
       t.timestamps
     end
   end
