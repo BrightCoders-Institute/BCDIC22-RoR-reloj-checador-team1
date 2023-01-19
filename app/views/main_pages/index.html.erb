@@ -7,7 +7,7 @@
   <%= bootstrap_form_for(@attendance) do |f| %>
   <div class="form-floating">
     <%= f.text_field :employee_id, class: "form-control", placeholder: "ID de trabajador", hide_label: true %>
-    <%= f.password_field :employee_id, class: "form-control", placeholder: "Numero Privado", hide_label: true %>
+    <%= f.password_field :privateNumber, class: "form-control", placeholder: "Numero Privado", hide_label: true %>
     <%= f.form_group :direction, class: "d-flex justify-content-around p-4" do %>
       <%= f.radio_button :direction, "Check-in", label: "Entrada", inline: true %>
       <%= f.radio_button :direction, "Check-out", label: "Salida", inline: true %>
