@@ -2,11 +2,8 @@ class AttendancesController < ApplicationController
   def create
     @attendance = Attendance.new(attendance_params)
 
-    if @attendance.save
-      redirect_to '/'
-    else
-      redirect_to '/'
-    end
+    redirect_to '/' if @attendance.save
+    
   end
 
   private
