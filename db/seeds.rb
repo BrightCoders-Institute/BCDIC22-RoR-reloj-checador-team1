@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+store = Store.create(name: 'Oxxo', address: '123 Street')
+empleado = Employee.create(name: 'Bart Simpson', email: 'bart@simpson.com', position: 'regional manager', statusActive: true, store_id: 1, privateNumber: 123456)

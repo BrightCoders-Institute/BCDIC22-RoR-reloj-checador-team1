@@ -4,7 +4,6 @@ class CreateEmployees < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :email
       t.string :position
-      t.integer :employeeNumber
       t.integer :privateNumber
       t.boolean :statusActive
       t.belongs_to :store

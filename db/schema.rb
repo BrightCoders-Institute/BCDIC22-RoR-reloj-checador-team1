@@ -15,9 +15,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_231650) do
   enable_extension "plpgsql"
 
   create_table "attendances", force: :cascade do |t|
-    t.date "date"
     t.string "direction"
     t.bigint "employee_id"
+    t.integer "privateNumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["employee_id"], name: "index_attendances_on_employee_id"
@@ -27,7 +27,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_231650) do
     t.string "name"
     t.string "email"
     t.string "position"
-    t.integer "employeeNumber"
     t.integer "privateNumber"
     t.boolean "statusActive"
     t.bigint "store_id"
