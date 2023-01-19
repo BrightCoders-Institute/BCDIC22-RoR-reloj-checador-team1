@@ -1,14 +1,17 @@
-
 <main class="form-signin">
 <div class="container-fluid center">
     <p class="reloj"> 18:00:00 </p>
 </div>
-  <h3 class="h3 mb-3">Porfavor ingresa tus credenciales.</h3>
+  <h3 class="h3 mb-3 text-center">Porfavor ingresa tus credenciales.</h3>
   <%= bootstrap_form_for(@attendance) do |f| %>
   <div class="form-floating">
     <%= f.text_field :employee_id, class: "form-control", placeholder: "ID de trabajador", hide_label: true %>
     <%= f.password_field :employee_id, class: "form-control", placeholder: "Numero Privado", hide_label: true %>
-  <div class="form-floating">
+    <%= f.form_group :direction, class: "d-flex justify-content-around p-4" do %>
+      <%= f.radio_button :direction, "Check-in", label: "Entrada", inline: true %>
+      <%= f.radio_button :direction, "Check-out", label: "Salida", inline: true %>
+    <% end %>
     <%= f.submit "Check", class: "w-100 btn btn-lg btn-primary" %>
+  </div>
   <% end %>
 </main>

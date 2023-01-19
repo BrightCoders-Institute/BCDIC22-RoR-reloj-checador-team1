@@ -6,6 +6,6 @@ class MainPagesController < ApplicationController
     @attendance = Attendance.new
   end
   def create
-    @attendance = Attendance.new()
+    @attendance = Attendance.new
   end
 end
