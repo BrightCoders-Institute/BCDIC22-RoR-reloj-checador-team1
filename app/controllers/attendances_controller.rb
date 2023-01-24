@@ -2,8 +2,7 @@ class AttendancesController < ApplicationController
   def create
     @attendance = Attendance.new(attendance_params)
 
-    redirect_to '/' if @attendance.save
-    
+    @attendance.save ? (redirect_to root_path, success: "Successful registration!") : (redirect_to root_path, danger: "ERROR: Sign up failed!")
   end
 
   private
