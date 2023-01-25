@@ -1,0 +1,18 @@
+<main class="form-signin">
+<div class="container-fluid center">
+    <p class="administrator">Log-In Adminstrador</p>
+</div>
+  <h3 class="h3 mb-3 text-center">Porfavor ingresa tus credenciales.</h3>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-<%= type %> text-center">
+      <%= msg %>
+    </div>
+  <% end %>
+  <%= bootstrap_form_for(@login_admin) do |f| %>
+  <div class="form-floating">
+    <%= f.text_field :admin_id, class: "form-control", placeholder: "ID de Administrador", hide_label: true %>
+    <%= f.password_field :privateNumber, class: "form-control", placeholder: "Numero Privado", hide_label: true %>
+    <%= f.submit "Log In", class: "w-100 btn btn-lg btn-primary" %>
+  </div>
+  <% end %>
+</main>
