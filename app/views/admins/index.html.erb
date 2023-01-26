@@ -10,7 +10,7 @@
   <% end %>
   <%= bootstrap_form_for(@login_admin) do |f| %>
   <div class="form-floating">
-    <%= f.text_field :admin_id, class: "form-control", placeholder: "ID de Administrador", hide_label: true %>
+    <%= f.text_field :admin, class: "form-control", placeholder: "ID de Administrador", hide_label: true %>
     <%= f.password_field :privateNumber, class: "form-control", placeholder: "Numero Privado", hide_label: true %>
     <%= f.submit "Log In", class: "w-100 btn btn-lg btn-primary" %>
   </div>
