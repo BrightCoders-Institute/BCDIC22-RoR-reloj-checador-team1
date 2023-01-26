@@ -1,18 +1,13 @@
 class AdminsController < ApplicationController
 
-  def index
-      @login_admin = Admin.first
+  def new 
+
   end
 
   def create
-    @login_admin.present? ? (redirect_to root_path, success: "login de admin exitoso") : (redirect_to admin_path, danger: "ERROR: no login de admin")
+    @admin = Admin.find_by("admin = :admin", { admin: params[:admin]})
+
+    @admin&.authenticate(params[:privateNumber]) ? (redirect_to admin_index_path, success: "Successful registration! admin") : (redirect_to admin_index_path, danger: "ERROR: Sign up failed! admin")
+
   end
-
-  # private
-
-  # def loginadmin_params
-  #   params.require(:admin).permit(:admin, :privateNumber)
-  # end
-
 end
-
