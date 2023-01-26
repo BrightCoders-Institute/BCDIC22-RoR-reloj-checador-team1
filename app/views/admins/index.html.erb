@@ -1,6 +1,7 @@
 <main class="form-signin">
-<div class="container-fluid center">
-    <h2>Sign in</h2> 
+<div class="container-fluid center login">
+    <%= image_tag("/assets/user-solid.svg", alt: "user", width: "150", height: "142") %>
+    <h1>Sign in</h1> 
 </div>
   <h3 class="h3 mb-3 text-center">Porfavor ingresa tus credenciales.</h3>
   <% flash.each do |type, msg| %>
