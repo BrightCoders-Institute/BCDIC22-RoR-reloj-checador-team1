@@ -5,9 +5,15 @@ class AdminsController < ApplicationController
   end
 
   def create
-    @admin = Admin.find_by("admin = :admin", { admin: params[:admin]})
-
-    @admin&.authenticate(params[:privateNumber]) ? (redirect_to admin_index_path, success: "Successful registration! admin") : (redirect_to admin_index_path, danger: "ERROR: Sign up failed! admin")
-
+    @admin = Admin.find_by(username: params[:username])
+    if @admin
+      if @admin&.authenticate(params[:password])
+        redirect_to new_admin_path, success: "Bienvenido #{@admin.username}"
+      else 
+        redirect_to new_admin_path, danger: "ERROR: Contraseña incorrecta"
+      end
+    else
+      redirect_to new_admin_path, danger: "No se encuentra el usuario"
+    end
   end
 end

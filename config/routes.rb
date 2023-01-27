@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root "main_pages#index"
   resources :attendances
 
-  resources '/admins/index', to: 'admins#index', as: 'admin', only: [:new, :create]
+  resources :admins, only: [:new, :create]
 
 end
