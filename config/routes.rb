@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "main_pages#index"
   resources :attendances
+
+  get '/admins/index', to: 'admins#index', as: 'admin'
+
 end
