@@ -1,5 +1,9 @@
 class AdminsController < ApplicationController
 
+  def index
+
+  end
+
   def new 
 
   end
@@ -8,7 +12,7 @@ class AdminsController < ApplicationController
     @admin = Admin.find_by(username: params[:username])
     if @admin
       if @admin&.authenticate(params[:password])
-        redirect_to new_admin_path, success: "Bienvenido #{@admin.username}"
+        redirect_to portal_path, success: "Bienvenido #{@admin.username}"
       else 
         redirect_to new_admin_path, danger: "ERROR: Contraseña incorrecta"
       end
