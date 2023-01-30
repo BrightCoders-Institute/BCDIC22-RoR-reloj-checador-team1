@@ -82,7 +82,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['postgres://team1:YsOy4C7qLV7hHn9Um1PRPzgbO4mhzgo0@dpg-cf8plbsgqg47ftiim32g-a.oregon-postgres.render.com/reloj_checador'] %>
+  url: <%= ENV['DATABASE_URL'] %>
   database: BCDIC22_RoR_reloj_checador_team1_production
   username: BCDIC22_RoR_reloj_checador_team1
   password: <%= ENV["BCDIC22_ROR_RELOJ_CHECADOR_TEAM1_DATABASE_PASSWORD"] %>

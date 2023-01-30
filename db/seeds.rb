@@ -7,4 +7,4 @@
 #   Character.create(name: "Luke", movie: movies.first)
 store = Store.create(name: 'Oxxo', address: '123 Street')
 empleado = Employee.create(name: 'Bart Simpson', email: 'bart@simpson.com', position: 'regional manager', statusActive: true, store_id: 1, privateNumber: 123456)
-admin = Admin.create(admin: 1, privateNumber: 123456)
+admin = Admin.create(username: 'pepe', password: 'a123', password_confirmation: 'a123')

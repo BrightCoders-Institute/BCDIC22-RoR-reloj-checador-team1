@@ -7,12 +7,3 @@ function time() {
   reloj.innerHTML = `${("0" + hours).slice(-2)}:${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`
 }
 setInterval(time,1000);
-
-document.addEventListener("DOMContentLoaded", function(){
-	var alert = document.querySelector('.alert');
-	if (alert){
-		setTimeout(function(){
-			alert.style.display = "none";
-		}, 5000);
-	}
-});

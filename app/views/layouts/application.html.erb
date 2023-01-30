@@ -12,6 +12,12 @@
 
   <body>
     <%= render 'partials/navbar' %>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-<%= type %> text-center">
+        <%= msg %>
+      </div>
+    <% end %>
+    <%= javascript_include_tag 'hideFlashes' %>
     <%= yield %>
   </body>
 </html>

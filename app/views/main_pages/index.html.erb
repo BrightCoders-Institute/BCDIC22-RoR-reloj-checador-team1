@@ -4,11 +4,6 @@
     <%= javascript_include_tag 'liveClock' %>
 </div>
   <h3 class="h3 mb-3 text-center">Porfavor ingresa tus credenciales.</h3>
-  <% flash.each do |type, msg| %>
-    <div class="alert alert-<%= type %> text-center">
-      <%= msg %>
-    </div>
-  <% end %>
   <%= bootstrap_form_for(@attendance) do |f| %>
   <div class="form-floating">
     <%= f.text_field :employee_id, class: "form-control", placeholder: "ID de trabajador", hide_label: true %>

@@ -1,15 +1,19 @@
 class AdminsController < ApplicationController
 
+  def new 
+
+  end
+
   def create
-    @login_admin = Admin.new(loginadmin_params)
-    @login_admin.save ? (redirect_to root_path, success: "login de admin exitoso") : (redirect_to admin_path, danger: "ERROR: no login de admin")
+    @admin = Admin.find_by(username: params[:username])
+    if @admin
+      if @admin&.authenticate(params[:password])
+        redirect_to portal_path, success: "Bienvenido #{@admin.username}"
+      else 
+        redirect_to new_admin_path, danger: "ERROR: Contraseña incorrecta"
+      end
+    else
+      redirect_to new_admin_path, danger: "No se encuentra el usuario"
+    end
   end
-
-  private
-
-  def loginadmin_params
-    params.require(:admin).permit(:admin, :privateNumber)
-  end
-
 end
-
