@@ -1,1 +1,33 @@
-<h1>Pagina en construccion</h1>
+<div class="d-flex justify-content-evenly m-5">
+  <%= link_to "Nueva Tienda", new_store_path, class: "btn btn-green"%>
+  <%= link_to "Nuevo Empleado", new_employee_path, class: "btn btn-green"%>
+</div>
+<div class="container">
+  <table class="table table-bordered border-green align-middle">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Cargo</th>
+        <th scope="col">Activo</th>
+        <th scope="col">Tienda</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @employees.each do |e| %>
+      <tr>
+        <td><%= e.name %></th>
+        <td><%= e.email %></td>
+        <td><%= e.position %></td>
+        <td><%= e.statusActive %></td>
+        <td><%= e.store.name %></td>
+        <td class="text-center">
+          <%= link_to "Edit", edit_employee_path(e), class: "btn btn-green w-50" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+

@@ -77,10 +77,14 @@ body {
   margin-bottom: 10px;
 }
 
-.btn-primary {
-  background-color: #11763B;
+.border-green { 
+  border-color: $green-100; 
 }
 
-.btn-success {
-  background-color: #11763B;
+.btn-green {
+  background-color: $green-100;
+}
+
+.btn-green:hover {
+  background-color: $green-400;
 }
