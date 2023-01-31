@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-evenly m-5">
+  <%= link_to "Nueva Tienda", new_store_path, class: "btn btn-green"%>
+  <%= link_to "Back to menu", employees_path, class: "btn btn-green"%>
+</div>
+<div class="container">
+  <table class="table table-bordered table-hover border-green align-middle">
+    <thead class="bg-success text-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Direccion</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @store.each do |s| %>
+      <tr>
+        <td><%= s.id %></th>
+        <td><%= s.name %></th>
+        <td><%= s.address %></td>
+        <td class="text-center">
+          <%= link_to "Edit", edit_store_path(s), class: "btn btn-green w-50" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
