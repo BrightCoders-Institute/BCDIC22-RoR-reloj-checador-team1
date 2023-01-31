@@ -10,3 +10,4 @@ Rails.application.routes.draw do
   resources :stores, only: [:index, :new, :edit, :create, :update]
   get 'portal', to: 'employees#index'
 end
+
