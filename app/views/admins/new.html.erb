@@ -1,6 +1,6 @@
 <main class="form-signin">
 <div class="container-fluid center login">
-    <%= image_tag("/assets/user-solid.svg", alt: "user", width: "150", height: "142") %>
+    <i class="fa-solid fa-user fa-9x"></i>
     <h1>Sign in</h1> 
 </div>
   <h3 class="h3 mb-3 text-center">Porfavor ingresa tus credenciales.</h3>
@@ -8,7 +8,7 @@
   <div class="form-floating">
     <%= f.text_field :username, class: "form-control", placeholder: "Nombre de usuario", hide_label: true %>
     <%= f.password_field :password, class: "form-control", placeholder: "Contraseña", hide_label: true %>
-    <%= f.submit "Log In", class: "w-100 btn btn-lg btn-primary" %>
+    <%= f.submit "Log In", class: "w-100 btn btn-lg btn-success" %>
   </div>
   <% end %>
 </main>
