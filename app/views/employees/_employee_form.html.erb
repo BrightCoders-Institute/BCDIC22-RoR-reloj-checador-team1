@@ -1,7 +1,7 @@
 <div class="container-fluid center">
   <%= form_with(model: employee) do |form| %>
     <div class="mb-3 mt-5 form-group">
-      <%= form.text_field :name, class: "form-control", placeholder: "Name"%>
+      <%= form.text_field :name, class: "form-control", placeholder: "Nombre"%>
     </div>
 
     <div class="mb-3 form-group">
@@ -9,19 +9,19 @@
     </div>
 
     <div class="mb-3 form-group">
-      <%= form.text_field :position, class: "form-control", placeholder: "Position" %>
+      <%= form.text_field :position, class: "form-control", placeholder: "Posicion" %>
     </div>
 
     <div class="mb-3 form-group">
-      <%= form.text_field :privateNumber, class: "form-control", placeholder: "Private number"%>
+      <%= form.text_field :privateNumber, class: "form-control", placeholder: "Numero privado"%>
     </div>
 
     <div class="mb-3 form-group">
-      <%= form.text_field :statusActive, class: "form-control", placeholder:"Status"%>
+      <%= form.text_field :statusActive, class: "form-control", placeholder:"Estado"%>
     </div>
 
     <div class="mb-3 form-group">
-      <%= form.number_field :store_id, class: "form-control", placeholder:"Store ID"%>
+      <%= form.number_field :store_id, class: "form-control", placeholder:"ID de tienda"%>
     </div>
 
     <div class="actions">
@@ -29,3 +29,5 @@
     </div>
   <% end %>
 </div>
+
+
