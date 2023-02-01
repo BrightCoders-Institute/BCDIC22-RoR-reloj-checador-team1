@@ -4,6 +4,10 @@
     <%= image_tag("/assets/cubes-stacked-solid.svg", alt: "Logo", width: "30", height: "24", class:"d-inline-block align-text-top") %>
       FooCorp
     </a>
+    <% if Current.admin %>
+      <%= Current.admin.username %>
+      <%= link_to "Log out", logout_path %>
+    <% end %>
     <% if @home %>
       <%= link_to "Administrador", new_admin_path, class: "btn btn-success" %>
     <% end %>
