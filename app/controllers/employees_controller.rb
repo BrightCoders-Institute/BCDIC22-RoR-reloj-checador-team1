@@ -24,7 +24,7 @@ class EmployeesController < ApplicationController
 
   def update
     if @employee.update(employee_params)
-      redirect_to employees_url(@employee), notice: "Employee was successfully updated."
+      redirect_to employees_url(@employee), success: "Employee was successfully updated."
     else
       redirect_to employees_url(@employee), danger: "ERROR: Something went wrong :("
     end

@@ -1,11 +1,13 @@
-<nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
+
+<nav class="navbar bg-body-tertiary border-bottom border-success border-4">
+  <div class="container-fluid d-flex pr-5 pl-5">
     <a class="navbar-brand" href="#">
-    <%= image_tag("/assets/cubes-stacked-solid.svg", alt: "Logo", width: "30", height: "24", class:"d-inline-block align-text-top") %>
+      <i class="m-2 fa-solid fa-cubes-stacked fa-xl"></i>
       FooCorp
     </a>
-    <% if @home %>
-      <%= link_to "Administrador", new_admin_path, class: "btn btn-success" %>
-    <% end %>
+  <% if @home %>
+    <%= link_to "Administrador", new_admin_path, class: "btn btn-success" %>
+  <% end %>
   </div>
 </nav>
+

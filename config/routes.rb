@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :admins, only: [:new, :create]
   resources :employees, only: [:index, :edit, :new, :create, :update]
-  resources :stores, only: [:new]
+  resources :stores, only: [:index, :new, :edit, :create, :update]
   get 'portal', to: 'employees#index'
 end
 
