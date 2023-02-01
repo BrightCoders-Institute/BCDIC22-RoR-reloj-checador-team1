@@ -1,0 +1,41 @@
+<div class="container">
+  <table class="table table-bordered border-green align-middle">
+    <thead>
+      <tr>
+        <th scope="col">Fecha (DD-MM-YY)</th>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Check-in</th>
+        <th scope="col">Check-out</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @attendances.each do |e| %>
+      <tr>
+        <td><%= e.created_at.strftime('%d-%m-%y') %></th>
+        <td><%= e.employee_id %></td>
+        <td><%= e.employee.name %></td>
+        <% if e.direction == 'Check-in'%>
+          <td><%= e.created_at.strftime('%T') %></td>
+        <% else %>
+          <td></td>
+        <% end %>
+        <% if e.direction == 'Check-out'%>
+          <td><%= e.created_at.strftime('%T') %></td>
+        <% else %>
+          <td></td>
+        <% end %>
+        <td class="text-center">
+          # <%= link_to "Edit", edit_employee_path(e), class: "btn btn-green w-50" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="container">
+  <h3>Average time employees checked in/out by month</h3>
+  <p> <%= @avgAttendances %></p>
+</div>

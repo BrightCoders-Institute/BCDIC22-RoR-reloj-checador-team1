@@ -1,4 +1,9 @@
 class AttendancesController < ApplicationController
+  def index
+    @attendances = Attendance.all
+    @avgAttendances = Attendance.all.group(:direction).count
+  end
+
   def create
     @attendance = Attendance.new(attendance_params)
 

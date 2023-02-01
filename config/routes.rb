@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "main_pages#index"
-  resources :attendances
+  resources :attendances, only: [:create, :index]
 
   resources :admins, only: [:new, :create]
   resources :employees, only: [:index, :edit, :new]
