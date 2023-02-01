@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :attendances
 
   resources :admins, only: [:new, :create]
-  resources :employees, only: [:index, :edit, :new]
+  resources :employees, only: [:index, :edit, :new, :create, :update]
   resources :stores, only: [:new]
   get 'portal', to: 'employees#index'
 end

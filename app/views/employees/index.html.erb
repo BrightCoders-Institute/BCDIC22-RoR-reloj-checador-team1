@@ -3,9 +3,10 @@
   <%= link_to "Nuevo Empleado", new_employee_path, class: "btn btn-green"%>
 </div>
 <div class="container">
-  <table class="table table-bordered border-green align-middle">
-    <thead>
+  <table class="table table-bordered table-hover border-green align-middle">
+    <thead class="bg-success text-light">
       <tr>
+        <th scope="col">ID</th>
         <th scope="col">Nombre</th>
         <th scope="col">Email</th>
         <th scope="col">Cargo</th>
@@ -15,12 +16,13 @@
       </tr>
     </thead>
     <tbody>
-    <% @employees.each do |e| %>
+    <% @employee.each do |e| %>
       <tr>
+        <td><%= e.id %></th>
         <td><%= e.name %></th>
         <td><%= e.email %></td>
         <td><%= e.position %></td>
-        <td><%= e.statusActive %></td>
+        <td class="text-success"><%= e.statusActive %></td>
         <td><%= e.store.name %></td>
         <td class="text-center">
           <%= link_to "Edit", edit_employee_path(e), class: "btn btn-green w-50" %>

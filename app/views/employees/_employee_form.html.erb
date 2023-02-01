@@ -1,0 +1,33 @@
+<div class="container-fluid center">
+  <%= form_with(model: employee) do |form| %>
+    <div class="mb-3 mt-5 form-group">
+      <%= form.text_field :name, class: "form-control", placeholder: "Nombre"%>
+    </div>
+
+    <div class="mb-3 form-group">
+      <%= form.email_field :email, class: "form-control", placeholder: "Email" %>
+    </div>
+
+    <div class="mb-3 form-group">
+      <%= form.text_field :position, class: "form-control", placeholder: "Posicion" %>
+    </div>
+
+    <div class="mb-3 form-group">
+      <%= form.text_field :privateNumber, class: "form-control", placeholder: "Numero privado"%>
+    </div>
+
+    <div class="mb-3 form-group">
+      <%= form.text_field :statusActive, class: "form-control", placeholder:"Estado"%>
+    </div>
+
+    <div class="mb-3 form-group">
+      <%= form.number_field :store_id, class: "form-control", placeholder:"ID de tienda"%>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: "btn btn-primary"%>
+    </div>
+  <% end %>
+</div>
+
+
