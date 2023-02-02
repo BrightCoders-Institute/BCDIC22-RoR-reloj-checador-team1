@@ -5,9 +5,8 @@
         <th scope="col">Fecha (DD-MM-YY)</th>
         <th scope="col">ID</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Check-in</th>
-        <th scope="col">Check-out</th>
-        <th scope="col"></th>
+        <th scope="col">Entrada</th>
+        <th scope="col">Salida</th>
       </tr>
     </thead>
     <tbody>
@@ -26,9 +25,6 @@
         <% else %>
           <td></td>
         <% end %>
-        <td class="text-center">
-          # <%= link_to "Edit", edit_employee_path(e), class: "btn btn-green w-50" %>
-        </td>
       </tr>
     <% end %>
     </tbody>
@@ -36,6 +32,7 @@
 </div>
 
 <div class="container">
-  <h3>Average time employees checked in/out by month</h3>
-  <p> <%= @avgAttendances %></p>
+  <h3>Promedio de entrada y salida de los empleados</h3>
+  <p> Entrada <%= @avgIn %></p>
+  <p> Salida <%= @avgOut %></p>
 </div>
