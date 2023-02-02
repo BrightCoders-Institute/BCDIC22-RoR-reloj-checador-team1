@@ -1,4 +1,5 @@
 class AttendancesController < ApplicationController
+  skip_before_action :protect_pages, only: [:create]
   def index
     @attendances = Attendance.all
     @avgAttendances = Attendance.all.group(:direction).count
