@@ -5,9 +5,13 @@
       <i class="m-2 fa-solid fa-cubes-stacked fa-xl"></i>
       FooCorp
     </a>
-  <% if @home %>
-    <%= link_to "Administrador", new_admin_path, class: "btn btn-success" %>
-  <% end %>
+    <% if Current.admin %>
+      <%= Current.admin.username %>
+      <%= link_to "Log out", logout_path %>
+    <% end %>
+    <% if @home %>
+      <%= link_to "Administrador", new_admin_path, class: "btn btn-success" %>
+    <% end %>
   </div>
 </nav>
 

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :attendances, only: [:create, :index]
 
   resources :admins, only: [:new, :create]
-  resources :employees, only: [:index, :edit, :new, :create, :update]
-  resources :stores, only: [:index, :new, :edit, :create, :update]
+  get '/logout', to: 'admins#destroy'
+  resources :employees, only: [:index, :edit, :new]
+  resources :stores, only: [:new]
   get 'portal', to: 'employees#index'
 end
-
