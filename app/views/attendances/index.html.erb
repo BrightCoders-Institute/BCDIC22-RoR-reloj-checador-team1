@@ -1,0 +1,39 @@
+<div class="container">
+  <table class="table table-bordered border-green align-middle">
+    <thead>
+      <tr>
+        <th scope="col">Fecha (DD-MM-YY)</th>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Entrada</th>
+        <th scope="col">Salida</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @attendances.each do |e| %>
+      <tr>
+        <td><%= e.created_at.strftime('%d-%m-%y') %></th>
+        <td><%= e.employee_id %></td>
+        <td><%= e.employee.name %></td>
+        <% if e.direction == 'Check-in'%>
+          <td><%= e.created_at.strftime('%T') %></td>
+        <% else %>
+          <td></td>
+        <% end %>
+        <% if e.direction == 'Check-out'%>
+          <td><%= e.created_at.strftime('%T') %></td>
+        <% else %>
+          <td></td>
+        <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="container">
+  <h3>Promedio de entrada y salida de los empleados</h3>
+  <p> Entrada <%= @avgIn %></p>
+  <p> Salida <%= @avgOut %></p>
+</div>
+

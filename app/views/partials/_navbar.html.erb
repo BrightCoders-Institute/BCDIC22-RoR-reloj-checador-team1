@@ -7,7 +7,7 @@
     </a>
     <% if Current.admin %>
       <%= Current.admin.username %>
-      <%= link_to "Log out", logout_path %>
+      <%= link_to "Log out", logout_path, class: "btn btn-success" %>
     <% end %>
     <% if @home %>
       <%= link_to "Administrador", new_admin_path, class: "btn btn-success" %>

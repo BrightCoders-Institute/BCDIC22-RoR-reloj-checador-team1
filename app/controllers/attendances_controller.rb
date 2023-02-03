@@ -1,4 +1,14 @@
 class AttendancesController < ApplicationController
+  skip_before_action :protect_pages, only: [:create]
+  def index
+    @attendances = Attendance.all
+
+    @avgIn = Attendance.group_by_hour(:created_at, format: "%-l %P").where(direction: "Check-in").count
+    
+    @avgOut = Attendance.group_by_hour(:created_at, format: "%-l %P").where(direction: "Check-out").count
+    
+  end
+
   def create
     @attendance = Attendance.new(attendance_params)
 
