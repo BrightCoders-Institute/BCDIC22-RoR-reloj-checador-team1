@@ -1,12 +1,12 @@
 
 <nav class="navbar bg-body-tertiary border-bottom border-success border-4">
   <div class="container-fluid d-flex pr-5 pl-5">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <i class="m-2 fa-solid fa-cubes-stacked fa-xl"></i>
       FooCorp
     </a>
     <% if Current.admin %>
-      <%= Current.admin.username %>
+      <p class="fs-4 fw-bold"><%= Current.admin.username %></p>
       <%= link_to "Log out", logout_path, class: "btn btn-success" %>
     <% end %>
     <% if @home %>

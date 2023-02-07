@@ -1,6 +1,12 @@
-<div class="container">
-  <table class="table table-bordered border-green align-middle">
-    <thead>
+<div class="d-flex justify-content-evenly m-5">
+  <strong class="fs-2"> Reporte de Empleados</strong>
+  <%= link_to "Volver al menú", employees_path, class: "btn btn-dark d-flex align-items-center"%>
+</div>
+
+<div class="container p-3">
+<h3>Tabla de asistencias</h3>
+  <table class="table table-bordered border-green align-middle table-hover">
+    <thead class="table-success">
       <tr>
         <th scope="col">Fecha</th>
         <th scope="col">ID</th>
@@ -31,20 +37,24 @@
   </table>
 </div>
 
-<div class="container">
-  <h3>Promedio de entrada y salida de los empleados</h3>
-  <strong>Entrada</strong><p><%= @avgIn %></p>
-  <strong>Salida</strong><p><%= @avgOut %></p>
+<div class="container p-3">
+  <h3>Promedio de hora de entrada y salida de los empleados</h3>
+  <div class="d-flex justify-content-evenly pt-4 fs-3">
+    <div><strong>Entrada</strong><p><%= @avgIn %></p></div>
+    <div><strong>Salida</strong><p><%= @avgOut %></p></div>
+  </div>
 </div>
 
-<div class="container">
+<div class="container p-3">
   <h3>Ausencia por mes</h3>
-  <table class="table border-bottom border-dark w-100 text-center mt-4 table-hover">
-  <tr class="">
-    <th>ID</th>
-    <th>NAME</th>
-    <th>DAYS WITHOUT CHECK</th>
-  </tr>
+  <table class="table table-bordered border-green align-middle table-hover">
+  <thead class="table-success">
+    <tr class="">
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Dias sin entrada</th>
+    </tr>
+  </thead>
   <% @ausencia.each do |employee|  %>
     <% result = (employee.attendances.group_by_day(:created_at, range: employee.attendances.minimum(:created_at)..Time.now).count)%>
     <% daysNo = result.select { |k, v| v == 0 }.keys %>
