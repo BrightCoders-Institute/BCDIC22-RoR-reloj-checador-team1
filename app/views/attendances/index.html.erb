@@ -2,7 +2,7 @@
   <table class="table table-bordered border-green align-middle">
     <thead>
       <tr>
-        <th scope="col">Fecha (DD-MM-YY)</th>
+        <th scope="col">Fecha</th>
         <th scope="col">ID</th>
         <th scope="col">Nombre</th>
         <th scope="col">Entrada</th>
@@ -12,7 +12,7 @@
     <tbody>
     <% @attendances.each do |e| %>
       <tr>
-        <td><%= e.created_at.strftime('%d-%m-%y') %></th>
+        <td><%= e.created_at.strftime('%d / %B / %Y') %></th>
         <td><%= e.employee_id %></td>
         <td><%= e.employee.name %></td>
         <% if e.direction == 'Check-in'%>
@@ -39,6 +39,25 @@
 
 <div class="container">
   <h3>Ausencia por mes</h3>
-  <strong>Ausencia</strong><p><%= @ausencia %></p>
+  <table class="table border-bottom border-dark w-100 text-center mt-4 table-hover">
+  <tr class="">
+    <th>ID</th>
+    <th>NAME</th>
+    <th>DAYS WITHOUT CHECK</th>
+  </tr>
+  <% @ausencia.each do |employee|  %>
+    <% result = (employee.attendances.group_by_day(:created_at, range: employee.attendances.minimum(:created_at)..Time.now).count)%>
+    <% daysNo = result.select { |k, v| v == 0 }.keys %>
+    <tr>
+      <td><%= employee.id %></td>
+      <td><%= employee.name %></td>
+      <td>
+        <% daysNo.each do |d| %>
+          <%= simple_format "#{d.strftime('%d / %B / %Y')} \n" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
 </div>
 

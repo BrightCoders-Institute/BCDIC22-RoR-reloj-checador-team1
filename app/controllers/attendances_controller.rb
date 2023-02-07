@@ -10,8 +10,7 @@ class AttendancesController < ApplicationController
     @avgOut = "#{hourInOut(checkouts)}:#{minuteInOut(checkouts)}:#{secondInOut(checkouts)}"
 
     today = Time.now.strftime("%d %b %Y")
-    @ausencia = Attendance.where(direction: "Check-in", created_at: > Time.now.beginning_of_month ).pluck(:employee_id)
-    puts today
+    @ausencia = Employee.order(:id)
   end
 
   def hourInOut(inOuts)
